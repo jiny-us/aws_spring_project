@@ -37,7 +37,7 @@
 						</ul>
 						<ul class="actions stacked">
 							<!-- <li><a href="#" class="button primary fit">Get Started</a></li> -->
-							<li><a href="#" class="button fit">Log In</a></li>
+							<li><a href="/list" class="button fit">자유게시판</a></li>
 						</ul>
 					</nav>
 
