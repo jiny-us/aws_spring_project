@@ -60,6 +60,13 @@
             <version>1.2.1</version>
         </dependency>
         
+        <!-- JSTL -->
+        <dependency>
+               <groupId>jstl</groupId>
+               <artifactId>jstl</artifactId>
+               <version>1.2</version>
+         </dependency>
+        
         <!--JDBC -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
