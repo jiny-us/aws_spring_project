@@ -67,6 +67,7 @@
 									</div>
 									<ul class="actions">
 										<li> <button type="submit" class="primary">수정</button></li>
+										<li> <input type="button" class="primary" onclick="window.history.back()" value="취소"></li>
 									</ul>
 								</form>
 							</section>
