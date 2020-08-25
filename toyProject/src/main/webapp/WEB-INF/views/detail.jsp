@@ -77,7 +77,7 @@
 										<ul class="actions">
 										
 											<li><button class="btn btn-primary" onclick="location.href='/update/${detail.bno}'">수정</button></li>
-											<li><button class="btn btn-danger" onclick="location.href='/delete/${detail.bno}'">삭제</button></li>
+											<li><button class="btn btn-danger" onclick="delContent(${detail.bno})">삭제</button></li>
 											<li><button class="btn btn-danger" onclick="location.href='/list'">목록으로</button></li>
 										</ul>
 							</section>
@@ -99,4 +99,18 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
+<script type="text/javascript">
+
+function delContent(bno){
+	if(confirm("정말로 삭제하시겠습니까?")){
+		location.href='/delete/'+bno;
+	}else{
+		return;
+	}
+	
+}
+
+</script>
 </html>
+
+
