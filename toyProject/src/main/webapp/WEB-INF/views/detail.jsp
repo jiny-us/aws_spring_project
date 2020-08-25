@@ -64,7 +64,7 @@
 											</div>
 											<div class="field half">
 												<label for="date">작성일자</label>
-												<input type="text" name="date" id="date" disabled="disabled"   value="${detail.created_date}"/>
+												<input type="text" name="date" id="date" disabled="disabled"   value="${detail.strDate}" />
 											</div>
 											<div class="field">
 												<label for="content">내용</label>
