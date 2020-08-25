@@ -9,6 +9,7 @@ public class BoardVO {
     private String content;
     private String writer;
     private Date created_date;
+    private String strDate;
     
 	public int getBno() {
 		return bno;
@@ -39,6 +40,12 @@ public class BoardVO {
 	}
 	public void setCreated_date(Date created_date) {
 		this.created_date = created_date;
+	}
+	public String getStrDate() {
+		return strDate;
+	}
+	public void setStrDate(String strDate) {
+		this.strDate = strDate;
 	}
     
 }
