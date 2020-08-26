@@ -1,5 +1,15 @@
 package com.kbds.board.controller;
 
+
+
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +30,11 @@ public class BoardController {
     @RequestMapping("/list") 
     private String boardList(Model model) throws Exception{
         
+		/*
+		 * List<BoardVO> list = boardServiceImpl.boardListService(); BoardVO vo = new
+		 * BoardVO(); for(int i=0;i<list.size(); i++) { vo = list.get(i);
+		 * System.out.println(vo.getCreated_date()); }
+		 */
         model.addAttribute("list", boardServiceImpl.boardListService());
 
         return "list"; 
@@ -27,10 +42,17 @@ public class BoardController {
     
     @RequestMapping("/detail/{bno}") 
     private String boardDetail(@PathVariable int bno, Model model) throws Exception{
+		 BoardVO vo = new BoardVO();
+		 vo = boardServiceImpl.boardDetailService(bno);
+		 Date d =   vo.getCreated_date();
+		 
+		 SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		 String strDate = transFormat.format(d); //화면그리기용 string형 날짜 필요해서 추가
+		 vo.setStrDate(strDate);
+		 model.addAttribute("detail", vo);
         
-        model.addAttribute("detail", boardServiceImpl.boardDetailService(bno));
-        
-        return "detail";
+		 return "detail";
     }
     
     @RequestMapping("/insert")
@@ -48,6 +70,7 @@ public class BoardController {
         board.setContent(request.getParameter("content"));
         board.setWriter(request.getParameter("writer"));
         
+
         boardServiceImpl.boardInsertService(board);
         
         return "redirect:/list";
