@@ -1,4 +1,5 @@
 FROM debian:10
+FROM openjdk:11.0.8
 MAINTAINER "mandrian@naver.com"
 VOLUME /tmp
 EXPOSE 8080
